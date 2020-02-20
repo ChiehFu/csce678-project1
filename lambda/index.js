@@ -22,7 +22,7 @@ exports.handler = async (event) => {
         if (page.statusCode == '404') {
             return {
                 statusCode: 404,
-                body:"Page not found, please enter a valid url"
+                body:"Page not found, please enter a valid url!"
             }
         }
         // Preprocess the url of the page 
@@ -55,6 +55,6 @@ exports.handler = async (event) => {
     }
     return {
         statusCode:200,
-        body:"Page registered"
+        body:"Page registered successfully!"
     }
 };
