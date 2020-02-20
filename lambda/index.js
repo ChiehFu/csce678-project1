@@ -19,7 +19,12 @@ exports.handler = async (event) => {
     try {
         // Scrap the webpage
         const page = await requestPromise(url);
-        
+        if (page.statusCode == '404') {
+            return {
+                statusCode: 404,
+                body:"Page not found, please enter a valid url"
+            }
+        }
         // Preprocess the url of the page 
         let urlWithSlashReplaced = url.replace(/\//g, '_');
         urlWithSlashReplaced = urlWithSlashReplaced.replace(/\./g, '_');
@@ -50,6 +55,6 @@ exports.handler = async (event) => {
     }
     return {
         statusCode:200,
-        body:"success!"
+        body:"Page registered"
     }
 };
