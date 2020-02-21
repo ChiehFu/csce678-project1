@@ -24,4 +24,4 @@
 - The URL of the AWS Lambda API Gateway: 
   - `https://le4qbchjrl.execute-api.us-east-1.amazonaws.com/dev/download-page?url=<YOUR_WEBPAGE_URL>`
 - The Public DNS of the EC2 instance:
-  - `ec2-3-86-147-125.compute-1.amazonaws.com`
+  - `ec2-3-86-147-125.compute-1.amazonaws.com` (`ubuntu@ec2-3-86-147-125.compute-1.amazonaws.com`)
