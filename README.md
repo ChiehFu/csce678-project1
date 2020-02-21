@@ -3,12 +3,18 @@
 - UIN: 627005085
 - Cloud platform: AWS
 - Platform for command-line tool development: Mac OS Catalina 10.15.3
-- Command-line program:
-  - Dependency:
-    - curl
-  - Instruction:
-    - Run the bash problem with the following script:
-    - `bash registerUrl.sh <YOUR_WEBPAGE_URL>`
+- Instructions:
+  - Command-line program:
+    - Dependency:
+      - curl
+    - Run the script `bash registerUrl.sh <YOUR_WEBPAGE_URL>` to register your target URL
+  - EC2 server:
+    - Connect to the server and navigate to the directory `/home/ubuntu/csce678/server/`
+    - Run the script `node server.js`
+    - The script will then do the following tasks:
+      - Every 10 seconds, long polls from SQS for 20 seconds and receives the url messages sent from the Lambda function
+      - Get the new web content from S3 with the `url` as the `key`
+      - Hash the web content with `sha256` and unload the result back to S3 with the original `url + '_hash'` as the `key`
 - S3 bucket name: 
   - `csce678-project`
 - The URL of the AWS Lambda API Gateway: 
